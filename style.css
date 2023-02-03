@@ -8,20 +8,31 @@
 
 #title {
     color: var(--text-color);
-    font-family: serif;
-    z-index: 1;
     text-align: center;
-    padding: 30vh;
     position: relative;
 
     font-size: 90px;
     font-family: "Courier New", Courier, monospace;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+#title-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
     z-index: 100000;
 }
 
 #header {
     position: relative;
     height: 95vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #glitch {
@@ -30,6 +41,8 @@
     height: 100%;
     border: none;
     z-index: -99999000;
+
+    /* margin-left: -100%; */
 }
 
 :root {
