@@ -164,7 +164,7 @@ nav ul li {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0px;
+    margin: 0;
     padding: 50px;
 }
 
