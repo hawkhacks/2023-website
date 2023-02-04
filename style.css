@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&display=swap");
 
-* {
-    box-sizing: border-box;
+html,
+body {
     padding: 0;
     margin: 0;
 }
 
 #title {
-    color: var(--text-color);
+    color: var(--highlight-color);
     text-align: center;
     position: relative;
 
@@ -18,21 +18,42 @@
     height: fit-content;
 }
 
-#title-box {
-    position: absolute;
+#top {
+    position: static;
+    height: 100vh;
     width: 100%;
-    height: 100%;
-    border: none;
-    z-index: 100000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #header {
     position: relative;
     height: 100vh;
+    width: 100%;
 
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        var(--bg-color) 0%,
+        transparent 25%,
+        transparent 75%,
+        var(--bg-color) 100%
+    );
+    z-index: -1;
 }
 
 #glitch {
@@ -44,11 +65,13 @@
 }
 
 :root {
-    --text-color: #00dd00;
+    --highlight-color: #00dd00;
+    --text-color: #f2f2f2;
+    --bg-color: #001;
 }
 
 .nav {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     z-index: 100000000000;
@@ -62,10 +85,13 @@
 nav {
     width: fit-content;
     margin: 1em;
+    padding: 1em;
+    line-height: normal;
 
     --background-opacity: 0.5;
     background-color: rgba(0, 0, 22, var(--background-opacity));
-    --blur: blur(1000px);
+
+    --blur: blur(22em);
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
 
@@ -73,6 +99,12 @@ nav {
     border: 1px solid rgba(255, 255, 255, var(--border-opacity));
     border-radius: 10px;
     transition: 0.25s ease-in-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
 }
 
 nav:hover,
@@ -83,20 +115,18 @@ nav:focus {
 
 .nav a {
     float: left;
-    color: #f2f2f2;
-    padding: 14px 16px;
-    font-size: 20px;
+    color: var(--text-color);
+    text-align: center;
     text-decoration-color: transparent;
-
     transition: 0.25s ease-in-out;
 }
 
 .nav a:hover,
 .nav a:focus {
-    color: var(--text-color);
+    color: var(--highlight-color);
     font-weight: bold;
     text-decoration: underline;
-    text-decoration-color: var(--text-color);
+    text-decoration-color: var(--highlight-color);
 }
 
 .grad {
@@ -109,36 +139,42 @@ nav:focus {
 
 body {
     font-family: Roboto Mono;
-    background-color: rgb(17, 17, 17);
-    color: #fff;
-    font-size: 18px;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     line-height: 1.7;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--highlight-color);
+    line-height: normal;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-    color: var(--text-color);
-    font-size: 50px;
-    margin-bottom: 20px;
-    letter-spacing: -4px;
+    font-size: xx-large;
+    letter-spacing: -0.05em;
 }
 
 h2 {
-    color: var(--text-color);
-    text-align: center;
+    font-size: x-large;
+    letter-spacing: -0.05em;
 }
 
 h3 {
     text-align: center;
-    color: rgb(167, 167, 167);
-}
-
-h3:hover {
-    color: rgb(235, 230, 230);
-    cursor: pointer;
+    font-size: large;
 }
 
 a {
-    color: var(--text-color);
+    color: var(--highlight-color);
     text-decoration: none;
 }
 
@@ -148,7 +184,7 @@ nav ul {
 }
 
 nav ul li {
-    color: var(--text-color);
+    color: var(--highlight-color);
     cursor: pointer;
 }
 
@@ -160,28 +196,9 @@ nav ul li {
 }
 
 .content {
-    height: 23vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     margin: 0;
-    padding: 50px;
-}
-
-.transition {
-    display: flex;
-    justify-content: space-around;
-    height: 2vh;
-    margin: 4px;
-    align-items: center;
-}
-
-.sections {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 160px;
-    height: 60vh;
+    padding: 1.5em;
+    max-width: 1000px;
 }
 
 .cursor {
@@ -196,6 +213,6 @@ nav ul li {
     }
 
     50% {
-        color: var(--text-color);
+        color: var(--highlight-color);
     }
 }
