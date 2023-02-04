@@ -63,12 +63,13 @@ nav {
     width: fit-content;
     margin: 1em;
 
-    background-color: rgba(0, 0, 11, 0.5);
+    --background-opacity: 0.5;
+    background-color: rgba(0, 0, 22, var(--background-opacity));
     --blur: blur(1000px);
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
 
-    --border-opacity: 0.1;
+    --border-opacity: 0.2;
     border: 1px solid rgba(255, 255, 255, var(--border-opacity));
     border-radius: 10px;
     transition: 0.25s ease-in-out;
@@ -76,7 +77,7 @@ nav {
 
 nav:hover,
 nav:focus {
-    --blur: blur(0px);
+    --background-opacity: 1;
     --border-opacity: 0.5;
 }
 
@@ -90,16 +91,12 @@ nav:focus {
     transition: 0.25s ease-in-out;
 }
 
-.nav a:hover:not(.active),
-.nav a:focus:not(.active) {
+.nav a:hover,
+.nav a:focus {
     color: var(--text-color);
     font-weight: bold;
     text-decoration: underline;
     text-decoration-color: var(--text-color);
-}
-
-.nav a.active {
-    color: var(--text-color);
 }
 
 .grad {
