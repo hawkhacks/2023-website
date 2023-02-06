@@ -67,6 +67,7 @@ body {
 
 :root {
     --highlight-color: #00dd00;
+    --secondary-highlight-color: #00aa44;
     --text-color: #f2f2f2;
     --bg-color: #001;
     --padding: 1rem;
@@ -112,7 +113,7 @@ a {
 .q {
     font-weight: bold;
     size: 80px;
-    color: #70b470;
+    color: var(--secondary-highlight-color);
     font: Roboto Mono Bold;
 }
 
