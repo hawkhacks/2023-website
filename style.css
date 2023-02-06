@@ -131,14 +131,6 @@ nav:focus {
     text-decoration-color: var(--highlight-color);
 }
 
-.grad {
-    position: relative;
-    width: 100%;
-    height: 15vh;
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(17, 17, 17));
-    z-index: 10000000;
-}
-
 body {
     font-family: Roboto Mono;
     color: var(--text-color);
