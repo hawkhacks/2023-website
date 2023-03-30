@@ -1,6 +1,6 @@
 # 2023-website
 
-are we hosted on github pages or what?
+yes we are indeed hosted on github pages lmaooo
 
 who owns hawkhacks.com?
 who is pushing to it?
